@@ -24,8 +24,8 @@ def catalog(request):
 def notices(request):
     """notices page"""
     template = loader.get_template('catalog/notices.html')
-    files = sorted([f for f in listdir('staticfiles/catalog/img') if \
-    isfile(join('staticfiles/catalog/img', f))])
+    files = sorted([f for f in listdir('catalog/static/catalog/img') if \
+    isfile(join('catalog/static/catalog/img', f))])
     content_picture = [
         "Emoticone triste par \
         <a href='https://www.flaticon.com/free-icon/crying_136366#term=cry&page=1&position=13' \

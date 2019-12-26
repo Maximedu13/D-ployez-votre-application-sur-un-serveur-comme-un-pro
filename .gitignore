@@ -5,3 +5,5 @@ env/
 staticfiles/
 .coverage/
 .coveragerc/
+NUTELLA/nutella_stop/settings/production.py
+NUTELLA/staticfiles
