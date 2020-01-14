@@ -10,7 +10,7 @@ branches:
   only:
     - staging
     
-env: DJANGO_SETTINGS_MODULE="nutella_stop.settings"
+env: DJANGO_SETTINGS_MODULE="nutella_stop.settings.travis"
 
 services:
   - postgresql
