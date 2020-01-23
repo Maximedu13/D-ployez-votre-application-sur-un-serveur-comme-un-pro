@@ -16,6 +16,8 @@ env: DJANGO_SETTINGS_MODULE="nutella_stop.settings.travis"
 services:
   - postgresql
 
-script: python3 manage.py test
+script: 
+  - cd NUTELLA
+  - python3 manage.py test
 
 
