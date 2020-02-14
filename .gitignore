@@ -7,3 +7,4 @@ staticfiles/
 .coveragerc/
 NUTELLA/nutella_stop/settings/production.py
 NUTELLA/staticfiles
+*.pyc

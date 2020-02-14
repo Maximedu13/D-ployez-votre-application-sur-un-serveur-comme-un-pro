@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c@n%u@91tum=@j392g20b8znh7dqfo-v%81))gxbbmu$=dy_*)'
+SECRET_KEY = ''
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -31,24 +31,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql', # on utilise l'adaptateur postgresql
         'NAME': 'postgres', # le nom de notre base de donnees creee precedemment
-        'USER': 'postgres', # attention : remplacez par votre nom d'utilisateur
-        'PASSWORD': 'max',
-        'HOST': 'localhost',
+        'USER': '', # attention : remplacez par votre nom d'utilisateur
+        'PASSWORD': '',
+        'HOST': '',
         'PORT': '5433',
     }
 }
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql', # on utilise l'adaptateur postgresql
-        'NAME': 'dk847vg5d7bcl', # le nom de notre base de donnees creee precedemment
-        'USER': 'jxtvguerpmmcim', # attention : remplacez par votre nom d'utilisateur
-        'PASSWORD': 'fa4995151a69da8a4d9ba56097f08678334f36a3231f2bc446e51432d9c76dd7',
-        'HOST': 'ec2-54-247-189-1.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
-    }
-}
-"""
+
 # SECURITY WARNING: don't run with debug turned on in production!
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)

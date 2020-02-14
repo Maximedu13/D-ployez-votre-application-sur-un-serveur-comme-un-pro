@@ -3,6 +3,7 @@
 from os import listdir
 from os.path import isfile, join
 import json
+import socket
 from django.http import HttpResponse
 from django.template import loader
 from django.contrib import messages
@@ -10,6 +11,8 @@ from django.shortcuts import redirect
 from django.template.defaulttags import register
 from .models import Product, Favorite
 from .database import insert, results
+from sentry_sdk import capture_message
+from .management.update_database import Commands
 # pylint: disable=no-member
 
 @register.filter
@@ -61,6 +64,16 @@ def index(request):
     """index page"""
     template = loader.get_template('catalog/index.html')
     insert()
+    try:
+        capture_message("Un utilisateur visite la page d'accueil, voici son adresse IP : " + socket.gethostbyname(socket.gethostname()))
+    except:
+        capture_message("Un utilisateur visite la page d'accueil")
+    return HttpResponse(template.render(request=request))
+    #get_favorites_before_the_update()
+    #get_all_products_in_api()
+    #C = Commands()
+    #C.update_with_favorites()
+    #get_the_new_product_id_from_old_url_off()
     return HttpResponse(template.render(request=request))
 
 def autocomplete(request):
@@ -131,6 +144,7 @@ def search(request):
         'message' : message,
         'query_one_infos' : query_one_infos,
     }
+    capture_message("Une nouvelle recherche utilisateur a été effectuée. La voici : " + query_one)
     return HttpResponse(template.render(msg, request=request))
 
 def product(request, product_id):
