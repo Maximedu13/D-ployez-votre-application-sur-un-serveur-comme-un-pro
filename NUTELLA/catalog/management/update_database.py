@@ -12,7 +12,7 @@ django.setup()
 sys.path.append('/mnt/c/Users/maxim/OneDrive/Documents/D-ployez-votre-application-sur-un-serveur-comme-un-pro/NUTELLA/catalog')
 from catalog.models import Product, Favorite, User
 sys.path.append('/mnt/c/Users/maxim/OneDrive/Documents/D-ployez-votre-application-sur-un-serveur-comme-un-pro/NUTELLA/catalog/management')
-from update_time import return_date_of_update
+from catalog.management.update_time import return_date_of_update
 
 class Commands():
     """ commands to update the db """
