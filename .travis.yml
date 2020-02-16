@@ -10,7 +10,7 @@ before_script:
 # safelist
 branches:
   only:
-    - staging
+    - master
     
 env: DJANGO_SETTINGS_MODULE="nutella_stop.settings.travis"
 
@@ -19,5 +19,6 @@ services:
 
 script:
   - python3 manage.py test
+
 
 
