@@ -37,18 +37,7 @@ DATABASES = {
         'PORT': '5433',
     }
 }
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql', # on utilise l'adaptateur postgresql
-        'NAME': 'dk847vg5d7bcl', # le nom de notre base de donnees creee precedemment
-        'USER': 'jxtvguerpmmcim', # attention : remplacez par votre nom d'utilisateur
-        'PASSWORD': 'fa4995151a69da8a4d9ba56097f08678334f36a3231f2bc446e51432d9c76dd7',
-        'HOST': 'ec2-54-247-189-1.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
-    }
-}
-"""
+
 # SECURITY WARNING: don't run with debug turned on in production!
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
@@ -153,4 +142,3 @@ STATIC_URL = '/static/'
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-

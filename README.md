@@ -13,6 +13,6 @@ L'application est disponible à l'adresse suivante : https://nutella-stop.heroku
 - Interface responsive
 - Authentification de l’utilisateur : création de compte en entrant un mail et un mot de passe, sans possibilité de changer son mot de passe pour le moment.
 
-
-
-
+### Déploiement sur IAAS (Digital Ocean)
+- Voir documentation (P10)
+- L'application est disponible à l'adresse suivante : http://157.230.19.106/
